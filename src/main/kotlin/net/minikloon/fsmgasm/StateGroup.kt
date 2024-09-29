@@ -3,7 +3,8 @@ package net.minikloon.fsmgasm
 import java.time.Duration
 
 open class StateGroup(states: List<State> = emptyList()) : StateHolder(states) {
-    constructor(vararg states: State) : this(states.toList())
+    constructor(vararg states: State)
+            : this(states.toList())
 
     override fun onStart() {
         states.forEach(State::start)
@@ -21,5 +22,5 @@ open class StateGroup(states: List<State> = emptyList()) : StateHolder(states) {
 
     override fun isReadyToEnd() = states.all(State::isReadyToEnd)
 
-    override val duration: Duration = states.maxBy { it.duration }?.duration ?: Duration.ZERO
+    override var duration: Duration = states.maxBy { it.duration }?.duration ?: Duration.ZERO
 }

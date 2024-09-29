@@ -77,7 +77,7 @@ abstract class State {
     
     protected abstract fun onEnd()
     
-    abstract val duration : Duration
+    abstract val duration: Duration
     
     val remainingDuration: Duration
         get() {
