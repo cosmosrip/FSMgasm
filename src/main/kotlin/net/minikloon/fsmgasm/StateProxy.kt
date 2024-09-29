@@ -9,9 +9,9 @@ abstract class StateProxy(private val series: StateSeries) : State() {
     
     abstract fun createStates() : List<State>
 
-    override fun onUpdate() {}
+    override fun onUpdate() { }
 
-    override fun onEnd() {}
+    override fun onEnd() { }
 
     override val duration: Duration = Duration.ZERO
 }

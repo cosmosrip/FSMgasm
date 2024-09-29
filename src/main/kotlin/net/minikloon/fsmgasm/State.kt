@@ -33,7 +33,7 @@ abstract class State {
         }
     }
     
-    protected abstract fun onStart()
+    protected open fun onStart() { }
     
     private var updating = false
     open fun update() {
@@ -56,7 +56,7 @@ abstract class State {
         updating = false
     }
     
-    abstract fun onUpdate()
+    open fun onUpdate() { }
 
     open fun end() {
         synchronized(lock) {
@@ -76,7 +76,7 @@ abstract class State {
         return ended || remainingDuration == Duration.ZERO
     }
     
-    protected abstract fun onEnd()
+    protected open fun onEnd() { }
     
     abstract val duration: Duration
     
