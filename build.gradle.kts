@@ -16,3 +16,11 @@ dependencies {
     implementation(group = "org.slf4j", name = "slf4j-api", version = "1.7.25")
     implementation("com.github.Minikloon:Kloggs:-SNAPSHOT")
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
+}
