@@ -1,6 +1,6 @@
 package net.minikloon.fsmgasm
 
-import java.time.Duration
+import kotlin.time.Duration
 
 open class StateGroup(states: List<State> = emptyList()) : StateHolder(states) {
     constructor(vararg states: State)

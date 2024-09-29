@@ -1,6 +1,6 @@
 package net.minikloon.fsmgasm
 
-import java.time.Duration
+import kotlin.time.Duration
 
 abstract class StateProxy(private val series: StateSeries) : State() {
     override fun onStart() {

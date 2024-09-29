@@ -1,8 +1,9 @@
 package net.minikloon.fsmgasm
 
 import net.minikloon.kloggs.logger
-import java.time.Duration
 import java.time.Instant
+import kotlin.time.Duration
+import kotlin.time.toKotlinDuration
 
 private val log = logger<State>()
 abstract class State {
@@ -81,8 +82,8 @@ abstract class State {
     
     val remainingDuration: Duration
         get() {
-            val sinceStart = Duration.between(startInstant, Instant.now())
-            val remaining = duration - sinceStart
-            return if(remaining.isNegative) Duration.ZERO else remaining
+            val sinceStart = java.time.Duration.between(startInstant, Instant.now())
+            val remaining = duration - sinceStart.toKotlinDuration()
+            return if(remaining.isNegative()) Duration.ZERO else remaining
         }
 }

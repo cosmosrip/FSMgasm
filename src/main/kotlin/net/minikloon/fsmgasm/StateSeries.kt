@@ -1,6 +1,6 @@
 package net.minikloon.fsmgasm
 
-import java.time.Duration
+import kotlin.time.Duration
 
 open class StateSeries(states: List<State> = emptyList()) : StateHolder(states) {
     protected var current = 0
